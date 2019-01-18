@@ -70,11 +70,13 @@ j_2_f = {mizujo_buy: mizuho_bank_j_2_f.text.to_f  , smbc_buy: smbc_bank_j_2_f.te
 sell = f_2_j.select {|k,v|  v if v == f_2_j.values.max}
 buy  = j_2_f.select {|k,v|  v if v == j_2_f.values.min}
 
-
-
 if query == 1
-  puts "you can buy at #{buy.values.first} price in #{buy.keys.join.split("_")[0].strip.capitalize} bank"
+  puts "you can buy at #{buy.keys.join.split("_")[0].strip.capitalize} bank with #{buy.values.first}¥"
+elsif query == 2
+  puts "you can sell at #{sell.keys.join.split("_")[0].strip.capitalize} bank with  #{sell.values.first}¥"
 else
-  puts "you can sell at #{sell.values.first} price in #{sell.keys.join.split("_")[0].strip.capitalize} bank"
+  puts "wrong input. please try again"
 end
+
+
 
